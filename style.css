@@ -66,12 +66,13 @@ section {
 
 /* Наши автомобили */
 .cars {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: center; 
     gap: 20px; 
 }
 
+/* Карточка автомобиля */
 .car-card {
     background-color: #fff; 
     border-radius: 10px; 
@@ -81,24 +82,26 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
+/* Эффект при наведении на карточку */
 .car-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Изображение автомобиля внутри карточки */
 .car-image {
     width: 100%;
-    height: 200px; 
-    object-fit: cover; 
+    height: auto; /* сохраняет пропорции изображения */
+    object-fit: cover; /* обрезка по краям при необходимости */
 }
 
-/* Информация о машине */
+/* Информация о машине внутри карточки */
 .car-info {
-    padding: 15px; 
+   padding: 15px; 
 }
 
 .car-title {
-   font-size:1.2em; 
+   font-size:.8em; /* уменьшил размер для компактности */
    margin-bottom :10px; 
 }
    
@@ -113,11 +116,28 @@ section {
    color:#555; 
 }
 
+/* Стили для ссылок внутри карточек автомобилей */
+.cars .car-card a {
+   text-decoration:none; /* убираем подчеркивание по умолчанию */
+   color:#333; /* цвет текста по умолчанию, можно изменить на нужный */
+}
+
+.cars .car-card a:hover {
+   text-decoration:underline; /* подчеркивание при наведении */
+}
+
+/* Стиль для изображений машин внутри карточек (если есть класс .car-image) */
+.cars .car-image {
+   width:auto; /* или можно оставить как есть, чтобы сохранялась пропорция */
+   max-width:100%; /* чтобы не выходило за границы контейнера */
+   height:auto; /* сохраняет пропорции изображения */
+}
+
 /* Контактная секция */
 .contact {
    background-color:#222; 
    color:#fff; 
-   padding :40px20px; 
+   padding :40px 20px; /* исправил ошибку с отсутствием пробела между значениями */
 }
    
 .contact h2 {
