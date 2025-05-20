@@ -74,19 +74,19 @@
 
         /* Наши автомобили */
         .cars {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
         }
 
         .car-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: 300px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            width: 300px; 
+            overflow: hidden; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
         .car-card:hover {
@@ -96,26 +96,26 @@
 
         .car-image {
             width: 100%;
-            height: 200px;
+            height: 200px; 
             object-fit: cover; 
         }
 
         .car-info {
-            padding: 15px;
+            padding: 15px; 
         }
 
         .car-title {
-            font-size: 1.2em;
-            margin-bottom: 10px; 
-        }
-
-        .price {
+           font-size:1.2em; 
+           margin-bottom :10px; 
+       }
+       
+       .price{
            color:#e91e63; 
            font-weight:bold; 
            margin-bottom :10px; 
        }
        
-       .description {
+       .description{
            font-size:.9em; 
            color:#555; 
        }
@@ -124,7 +124,7 @@
        .contact {
            background-color:#222; 
            color:#fff; 
-           padding :40px20px; 
+           padding :40px 20px; 
        }
        
        .contact h2 {
@@ -194,9 +194,9 @@
 <section id="cars">
     <h2 style="text-align:center;">Наши автомобили</h2>
     <div class="cars">
-      <!-- Карточка автомобиля -->
+      <!-- Карточка Toyota Camry -->
       <div class="car-card">
-          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Авто1" class="car-image" />
+          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Toyota Camry" class="car-image" />
           <div class="car-info">
               <div class="car-title">Toyota Camry</div>
               <div class="price">от ₽30,000/мес.</div>
@@ -204,9 +204,9 @@
           </div>
       </div>
 
-      <!-- Еще карточки по желанию -->
+      <!-- Карточка BMW X5 -->
       <div class="car-card">
-          <img src="https://images.unsplash.com/photo-1533560701747-7d6d7f7b8d9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Авто2" class="car-image" />
+          <img src="https://images.unsplash.com/photo-1533560701747-7d6d7f7b8d9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMW X5" class="car-image" />
           <div class="car-info">
               <div class="car-title">BMW X5</div>
               <div class="price">от ₽70,000/мес.</div>
@@ -214,25 +214,42 @@
           </div>
       </div>
 
-      <!-- Еще карточки можно добавлять по аналогии -->
+      <!-- Карточка Audi Q8 -->
+      <div class="car-card">
+          <img src="https://images.unsplash.com/photo-1616445829276-9b7c6d6f9b7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Audi Q8" class="car-image" />
+          <div class="car-info">
+              <div class="car-title">Audi Q8</div>
+              <div class="price">от ₽120,000/мес.</div>
+              <div class="description">Стильный кроссовер премиум-класса с передовыми технологиями и комфортом.</div>
+          </div>
+      </div>
+
+      <!-- Карточка Škoda Octavia -->
+      <div class="car-card">
+          <img src="https://images.unsplash.com/photo-1600718772784-cb7c6f9d6f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Škoda Octavia" class="car-image" />
+          <div class="car-info">
+              <div class="car-title">Škoda Octavia</div>
+              <div class="price">от ₽25,000/мес.</div>
+              <div class="description">Практичный и экономичный хэтчбек с современным дизайном и хорошей динамикой.</div>
+          </div>
+      </div>
+
     </div>
 </section>
 
 <!-- Контактная форма -->
-<section id="contact" class="contact">
+<section id="#contact" className='contact'>
     <h2>Свяжитесь с нами</h2>
-    <form action="#" method="post">
-      <input type="text" placeholder="Ваше имя" required />
-      <input type="email" placeholder="Ваш email" required />
-      <textarea rows="4" placeholder="Ваше сообщение" required></textarea>
-      <button type="submit">Отправить</button>
-    </form>
+    <form action="#" method='post'>
+      <input type='text' placeholder='Ваше имя' required />
+      <input type='email' placeholder='Ваш email' required />
+      <textarea rows='4' placeholder='Ваше сообщение' required></textarea>
+      <button type='submit'>Отправить</button>
+    </form>  
 </section>
 
 <!-- Подвал -->
-<footer>
-    &copy; <?php echo date("Y"); ?> Машины в Лизинг. Все права защищены.
-</footer>
+<footer>&copy; <?php echo date("Y"); ?> Машины в Лизинг. Все права защищены.</footer>
 
 </body>
 </html>
