@@ -3,77 +3,159 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Хедер */
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
-h1 {
+header h1 {
     margin: 0;
+    font-size: 2em;
 }
 
-.container {
+/* Навигация */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* О компании */
+.about {
     display: flex;
-    /* Удалите или закомментируйте следующую строку */
-    /* flex-wrap: wrap; */
-    justify-content: flex-start; /* или центрировать по желанию */
-    padding: 20px;
-    overflow-x: auto; /* добавьте для горизонтальной прокрутки при необходимости */
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.about img {
+    flex: 1 1 300px;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 2 1 300px;
+}
+
+.about-text h2 {
+    margin-top: 0;
+}
+
+/* Наши автомобили */
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .car-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    width: 300px;
-    margin: 15px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-    transition: transform 0.3s ease; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    width: 300px; 
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .car-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .car-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 200px; 
+    object-fit: cover; 
 }
 
+/* Информация о машине */
 .car-info {
-    padding: 15px;
+    padding: 15px; 
 }
 
 .car-title {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+   font-size:1.2em; 
+   margin-bottom :10px; 
+}
+   
+.price{
+   color:#e91e63; 
+   font-weight:bold; 
+   margin-bottom :10px; 
+}
+   
+.description{
+   font-size:.9em; 
+   color:#555; 
 }
 
-.price {
-    color: #e91e63;
-    font-weight: bold;
-        margin-bottom: 10px;
+/* Контактная секция */
+.contact {
+   background-color:#222; 
+   color:#fff; 
+   padding :40px20px; 
+}
+   
+.contact h2 {
+   text-align:center; 
+   margin-top :0; 
+}
+   
+.contact form {
+   max-width :600px; 
+   margin:auto; 
+   display:flex; 
+   flex-direction :column; 
+}
+   
+.contact input, .contact textarea {
+   padding :10px; 
+   margin-bottom :15px; 
+   border:none; 
+   border-radius :5px; 
+}
+   
+.contact button {
+   padding :12px; 
+   background-color:#e91e63; 
+   color:#fff; 
+   border:none; 
+   border-radius :5px; 
+   cursor:pointer; 
+}
+   
+.contact button:hover {
+   background-color:#c2185b;  
 }
 
-.description {
-        font-size: 0.9em;
-        color:#555
-}
-
-/* Стиль блока истории */
-.company-story {
-        max-width :1000px ;
-        margin :40px auto ; 
-        padding :20px ;
-        background-color :#fff ; 
-        border-radius :8px ; 
-        box-shadow :0 2px 8px rgba(0,0,0,0.1);
+/* Подвал */
+footer {
+   background-color:#111 ;  
+   color:#ccc ;  
+   text-align:center ;  
+   padding :20px ;  
 }
