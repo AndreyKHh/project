@@ -1,124 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Машины в лизинг</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .car-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: 300px;
-            margin: 15px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .car-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .car-info {
-            padding: 15px;
-        }
-
-        .car-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            color: #e91e63;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .description {
-            font-size: 0.9em;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Автомобили</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  .car-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 16px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  .car-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  .car-info {
+    flex: 1;
+  }
+  .car-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Стиль кнопки */
+  .select-button {
+    padding: 10px 20px;
+    background-color: white; /* изначально белая */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    
+    /* Можно добавить тень или границу для лучшего вида */
+    box-shadow: inset -1px -1px 3px rgba(0,0,0,0.2);
+    
+}
+.select-button:hover {
+    background-color: #007BFF; /* синий при наведении */
+    color: white; /* текст станет белым при синем фоне */
+}
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Машины в лизинг</h1>
-</header>
-
-<div class="container">
-    <!-- Карточка Kia Rio -->
 <div class="car-card">
-    <img src="https://cdn.kia.com/kr/images/kr/ko/vehicles/rio/2023/overview/01.jpg" alt="Kia Rio" class="car-image" />
-    <div class="car-info">
-        <div class="car-title">Kia Rio</div>
-        <div class="price">от 15 000 ₽/мес</div>
-        <div class="description">
-            Надежный городской автомобиль с экономичным расходом топлива.
-        </div>
-    </div>
+   <img src="https://images.unsplash.com/photo-1600718772784-7b7b6d3a7a3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kia Rio" class="car-image" />
+   <div class="car-info">
+       <div class="car-title">Kia Rio</div>
+       <div class="price">от 15 000 ₽/мес</div>
+       <div class="description">
+           Надежный городской автомобиль с экономичным расходом топлива.
+       </div>
+       <button class="select-button">Выбрать белого цвета</button>
+   </div>
 </div>
-    <div class="car-info">
-            <div class="car-title">Kia Rio</div>
-            <div class="price">от 15 000 ₽/мес</div>
-            <div class="description">
-                Надежный городской автомобиль с экономичным расходом топлива.
-            </div>
-        </div>
-    </div>
 
-    <!-- Карточка BMW X5 -->
-    <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1611095564982-6b7f9b8a2c3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMW X5" class="car-image" />
-        <div class="car-info">
-            <div class="car-title">BMW X5</div>
-            <div class="price">от 45 000 ₽/мес</div>
-            <div class="description">
-                Роскошный внедорожник с мощным двигателем и современными технологиями.
-            </div>
-        </div>
-    </div>
-
-    <!-- Карточка Skoda Kodiaq -->
-    <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1617112459274-6e7a9f8b2c3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skoda Kodiaq" class="car-image" />
-        <div class="car-info">
-            <div class="car-title">Skoda Kodiaq</div>
-            <div class="price">от 30 000 ₽/мес</div>
-            <div class="description">
-                Просторный кроссовер для семейных поездок и путешествий.
-            </div>
-        </div>
-    </div>
+<div class="car-card">
+   <img src="https://images.unsplash.com/photo-1611095564982-6b7f9b8a2c3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMW X5" class="car-image" />
+   <div class="car-info">
+       <div class="car-title">BMW X5</div>
+       <div class="price">от 35 000 ₽/мес</div>
+       <div class="description">
+           Роскошный внедорожник с мощным двигателем и современными технологиями.
+       </div>
+       <button class="select-button">Выбрать белого цвета</button>
+   </div>
 </div>
+
+<div class="car-card">
+   <img src="https://images.unsplash.com/photo-1617112459274-6e7a9f8b2c3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skoda Kodiaq" class="car-image" />
+   <div class="car-info">
+       <div class="car-title">Skoda Kodiaq</div>
+       <div class="price">от 22 000 ₽/мес</div>
+       <div class="description">
+           Просторный кроссовер для всей семьи с современным дизайном.
+       </div>
+       <button class="select-button">Выбрать белого цвета</button>
+   </div>
+</div>
+
+<!-- Можно добавить еще машин по аналогии -->
 
 </body>
-</html> 
+</html>
