@@ -6,7 +6,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Шапка сайта */
 header {
     background-color: #333;
     color: #fff;
@@ -37,19 +36,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Разделы сайта */
 .section {
     padding: 40px 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Заголовки разделов */
 .section h2 {
     margin-bottom: 20px;
 }
 
-/* Список автомобилей */
 .car-list {
     display: flex;
     flex-wrap: wrap;
@@ -65,24 +61,15 @@ nav ul li a:hover {
     padding: 10px;
 }
 
-/* Названия автомобилей - добавьте класс для наведения */
 .car-title {
-   font-weight:bold; /* Можно добавить стиль для названий */
-   cursor:pointer; /* чтобы было видно, что можно взаимодействовать */
+   font-weight:bold; 
+   cursor:pointer; 
 }
 
-/* При наведении на название автомобиля загорается синим цветом */
 .car-title:hover {
    color: blue; 
 }
 
-/* Фото автомобиля */
-.car-item img {
-    width: 100%;
-    border-radius: 4px;
-}
-
-/* Адаптивность для мобильных устройств */
 @media(max-width:768px) {
    .car-item {
        flex:1 1 calc(50% -40px);
@@ -97,7 +84,6 @@ nav ul li a:hover {
    }
 }
 
-/* Форма заявки */
 form {
    background-color:#fff;
    padding:20px;
@@ -105,17 +91,15 @@ form {
    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Поля формы */
 input[type=text],
 input[type=tel],
 select {
-   width:auto !important; /* исправление ширины */
+   width:auto !important; 
    width:100%;
    padding:10px;
-   box-sizing:border-box; /* чтобы паддинги не увеличивали ширину */
+   box-sizing:border-box;
 }
 
-/* Кнопка отправки */
 button[type=submit] {
    background-color:#333;
    color:#fff;
@@ -123,7 +107,7 @@ button[type=submit] {
    padding :12px 24px ;
    border-radius :4px ;
    cursor:pointer ;
-   transition: background-color 0.3s ease; /* Плавный переход при наведении */
+   transition: background-color 0.3s ease;
 }
 
 button[type=submit]:hover{
