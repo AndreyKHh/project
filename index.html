@@ -13,7 +13,6 @@
             background-color: #f4f4f4;
         }
 
-        /* Шапка сайта */
         header {
             background-color: #333;
             color: #fff;
@@ -44,19 +43,16 @@
             text-decoration: underline;
         }
 
-        /* Разделы сайта */
         .section {
             padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
 
-        /* Заголовки разделов */
         .section h2 {
             margin-bottom: 20px;
         }
 
-        /* Список автомобилей */
         .car-list {
             display: flex;
             flex-wrap: wrap;
@@ -72,25 +68,21 @@
             padding: 10px;
         }
 
-        /* Названия автомобилей - добавьте класс для наведения */
         .car-title {
-           font-weight:bold; /* Можно добавить стиль для названий */
-           cursor:pointer; /* чтобы было видно, что можно взаимодействовать */
-           transition: color 0.3s; /* плавный переход цвета */
+           font-weight:bold; 
+           cursor:pointer;
+           transition: color 0.3s;
         }
 
-        /* При наведении на название автомобиля загорается синим цветом */
         .car-title:hover {
            color: blue; 
         }
 
-        /* Фото автомобиля */
         .car-item img {
             width: 100%;
             border-radius: 4px;
         }
 
-        /* Адаптивность для мобильных устройств */
         @media(max-width:768px) {
            .car-item {
                flex:1 1 calc(50% -40px);
@@ -105,7 +97,6 @@
            }
         }
 
-        /* Форма заявки */
         form {
            background-color:#fff;
            padding:20px;
@@ -113,17 +104,15 @@
            box-shadow:0 2px 5px rgba(0,0,0,0.1);
        }
 
-       /* Поля формы */
        input[type=text],
        input[type=tel],
        select {
-           width:auto !important; /* исправление ширины */
+           width:auto !important; 
            width:100%;
            padding:10px;
-           box-sizing:border-box; /* чтобы паддинги не увеличивали ширину */
+           box-sizing:border-box;
        }
 
-       /* Кнопка отправки */
        button[type=submit] {
            background-color:#333;
            color:#fff;
@@ -131,7 +120,7 @@
            padding :12px 24px ;
            border-radius :4px ;
            cursor:pointer ;
-           transition: background-color 0.3s ease; /* Плавный переход при наведении */
+           transition: background-color 0.3s ease; 
        }
 
        button[type=submit]:hover{
@@ -162,19 +151,19 @@
         <div class="car-list">
             <div class="car-item">
                 <img src="https://via.placeholder.com/300x200?text=Авто+1" alt="Автомобиль 1" />
-                <!-- Добавляем класс к названию -->
+               
                 <h3 class="car-title">Легковой автомобиль A</h3>
                 <p>Цена: 1 000 000 ₽</p>
             </div>
             <div class="car-item">
                 <img src="https://via.placeholder.com/300x200?text=Авто+2" alt="Автомобиль 2" />
-                <!-- Добавляем класс к названию -->
+               
                 <h3 class="car-title">Кроссовер B</h3>
                 <p>Цена: 1 500 000 ₽</p>
             </div>
             <div class="car-item">
                 <img src="https://via.placeholder.com/300x200?text=Авто+3" alt="Автомобиль 3" />
-                <!-- Добавляем класс к названию -->
+              
                 <h3 class="car-title">Грузовик C</h3>
                 <p>Цена: 2 000 000 ₽</p>
             </div>
@@ -193,31 +182,25 @@
             <label for="car">Выберите автомобиль:</label><br/>
             <select id="car" name="car" required>
                 <option value="">--Выберите--</option>
-                <!-- Значения совпадают с названиями -->
+                
                 <option value="Легковой автомобиль A">Легковой автомобиль A</option>
                 <option value="Кроссовер B">Кроссовер B</option>
                 <option value="Грузовик C">Грузовик C</option>
              </select><br/><br/>
 
-             <!-- Кнопка отправки -->
              <button type='submit'>Отправить заявку</button> 
          </form>
 
-         <!-- Сообщение об успешной отправке -->
          <div id='formMessage' style='margin-top:20px; color:red; display:none;'> Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.</div>
 
      </section>
 
-     <!-- Скрипт для обработки формы -->
      <script >
          document.getElementById('leaseForm').addEventListener('submit', function(e) { 
              e.preventDefault();
 
-             // Можно добавить обработку данных или отправку на сервер
-             // Для примера просто показываем сообщение
              document.getElementById('formMessage').style.display='block';
 
-             // Очистка формы
              this.reset();
          });
      </script>
