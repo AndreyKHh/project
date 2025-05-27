@@ -65,11 +65,24 @@ nav ul li a:hover {
     padding: 10px;
 }
 
+/* Названия автомобилей - добавьте класс для наведения */
+.car-title {
+   font-weight:bold; /* Можно добавить стиль для названий */
+   cursor:pointer; /* чтобы было видно, что можно взаимодействовать */
+}
+
+/* При наведении на название автомобиля загорается синим цветом */
+.car-title:hover {
+   color: blue; 
+}
+
+/* Фото автомобиля */
 .car-item img {
     width: 100%;
     border-radius: 4px;
 }
 
+/* Адаптивность для мобильных устройств */
 @media(max-width:768px) {
    .car-item {
        flex:1 1 calc(50% -40px);
@@ -92,32 +105,27 @@ form {
    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Поля формы */
 input[type=text],
 input[type=tel],
 select {
-   width:auto;
+   width:auto !important; /* исправление ширины */
+   width:100%;
    padding:10px;
-   margin-top:-10px; /* чтобы убрать лишний отступ */
-   width:auto !important; /* исправление для ширины */
-   width:auto; /* чтобы было более универсально */
-   width:auto; /* оставить как есть для простоты */
-   width:auto; /* можно задать фиксированную ширину, например,100% или конкретное значение */
-   width:auto; /* исправление для ширины */
-   
+   box-sizing:border-box; /* чтобы паддинги не увеличивали ширину */
 }
-input[type=text],
-input[type=tel],
-select {
-   width :100%;
-}
+
+/* Кнопка отправки */
 button[type=submit] {
    background-color:#333;
    color:#fff;
    border:none;
    padding :12px 24px ;
-   border-radius :4 px ;
+   border-radius :4px ;
    cursor:pointer ;
+   transition: background-color 0.3s ease; /* Плавный переход при наведении */
 }
+
 button[type=submit]:hover{
-background-color:#555 ;
+   background-color:#555 ;
 }
