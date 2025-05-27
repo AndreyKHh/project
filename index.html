@@ -103,10 +103,10 @@
                flex:1 1 calc(100% -40px);
                max-width: calc(100% -40px);
            }
-       }
+        }
 
-       /* Форма заявки */
-       form {
+        /* Форма заявки */
+        form {
            background-color:#fff;
            padding:20px;
            border-radius:8px;
@@ -158,75 +158,69 @@
     </section>
 
     <section id="cars" class="section">
-                <h2>Наши автомобили</h2>
-                <div class="car-list">
-                    <div class="car-item">
-                        <img src="https://via.placeholder.com/300x200?text=Авто+1" alt="Автомобиль 1" />
-                        <!-- Добавляем класс к названию -->
-                        <h3 class="car-title">Легковой автомобиль A</h3>
-                        <p>Цена: 1 000 000 ₽</p>
-                    </div>
-                    <div class="car-item">
-                        <img src="https://via.placeholder.com/300x200?text=Авто+2" alt="Автомобиль 2" />
-                        <!-- Добавляем класс к названию -->
-                        <h3 class="car-title">Кроссовер B</h3>
-                        <p>Цена: 1 500 000 ₽</p>
-                    </div>
-                    <div class="car-item">
-                        <img src="https://via.placeholder.com/300x200?text=Авто+3" alt="Автомобиль 3" />
-                        <!-- Добавляем класс к названию -->
-                        <h3 class="car-title">Грузовик C</h3>
-                        <p>Цена: 2 000 000 ₽</p>
-                    </div>
-
-                    <!-- Вставляем ваше изображение сюда -->
-                    <div class="car-item">
-                        <img src="https://dpru.obs.ru-moscow-1.hc.sbercloud.ru/images/article/2021/06/28/FC63C3A5-9F12-45B9-9E50-68ABF637CFF2.jpg" alt="Дополнительное изображение" />
-                    </div>
-
-                </div>
+        <h2>Наши автомобили</h2>
+        <div class="car-list">
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+1" alt="Автомобиль 1" />
+                <!-- Добавляем класс к названию -->
+                <h3 class="car-title">Легковой автомобиль A</h3>
+                <p>Цена: 1 000 000 ₽</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+2" alt="Автомобиль 2" />
+                <!-- Добавляем класс к названию -->
+                <h3 class="car-title">Кроссовер B</h3>
+                <p>Цена: 1 500 000 ₽</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+3" alt="Автомобиль 3" />
+                <!-- Добавляем класс к названию -->
+                <h3 class="car-title">Грузовик C</h3>
+                <p>Цена: 2 000 000 ₽</p>
+            </div>
+        </div>
     </section>
 
     <section id="application" class="section">
-                <h2>Оформить заявку на лизинг</h2>
-                <form id="leaseForm">
-                    <label for="name">Имя:</label><br/>
-                    <input type="text" id="name" name="name" required /><br/><br/>
+        <h2>Оформить заявку на лизинг</h2>
+        <form id="leaseForm">
+            <label for="name">Имя:</label><br/>
+            <input type="text" id="name" name="name" required /><br/><br/>
 
-                    <label for="phone">Телефон:</label><br/>
-                    <input type="tel" id="phone" name="phone" required /><br/><br/>
+            <label for="phone">Телефон:</label><br/>
+            <input type="tel" id="phone" name="phone" required /><br/><br/>
 
-                    <label for="car">Выберите автомобиль:</label><br/>
-                    <select id="car" name="car" required>
-                        <option value="">--Выберите--</option>
-                        <!-- Значения совпадают с названиями -->
-                        <option value="Легковой автомобиль A">Легковой автомобиль A</option>
-                        <option value="Кроссовер B">Кроссовер B</option>
-                        <option value="Грузовик C">Грузовик C</option>
-                     </select><br/><br/>
+            <label for="car">Выберите автомобиль:</label><br/>
+            <select id="car" name="car" required>
+                <option value="">--Выберите--</option>
+                <!-- Значения совпадают с названиями -->
+                <option value="Легковой автомобиль A">Легковой автомобиль A</option>
+                <option value="Кроссовер B">Кроссовер B</option>
+                <option value="Грузовик C">Грузовик C</option>
+             </select><br/><br/>
 
-                     <!-- Кнопка отправки -->
-                     <button type='submit'>Отправить заявку</button> 
-                 </form>
+             <!-- Кнопка отправки -->
+             <button type='submit'>Отправить заявку</button> 
+         </form>
 
-                 <!-- Сообщение об успешной отправке -->
-                 <div id='formMessage' style='margin-top:20px; color:red; display:none;'> Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.</div>
+         <!-- Сообщение об успешной отправке -->
+         <div id='formMessage' style='margin-top:20px; color:red; display:none;'> Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.</div>
 
-             </section>
+     </section>
 
-             <!-- Скрипт для обработки формы -->
-             <script >
-                 document.getElementById('leaseForm').addEventListener('submit', function(e) { 
-                     e.preventDefault();
+     <!-- Скрипт для обработки формы -->
+     <script >
+         document.getElementById('leaseForm').addEventListener('submit', function(e) { 
+             e.preventDefault();
 
-                     // Можно добавить обработку данных или отправку на сервер
-                     // Для примера просто показываем сообщение
-                     document.getElementById('formMessage').style.display='block';
+             // Можно добавить обработку данных или отправку на сервер
+             // Для примера просто показываем сообщение
+             document.getElementById('formMessage').style.display='block';
 
-                     // Очистка формы
-                     this.reset();
-                 });
-             </script>
+             // Очистка формы
+             this.reset();
+         });
+     </script>
 
 </body> 
 </html>
