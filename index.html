@@ -1,244 +1,260 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Машины в Лизинг</title>
-    <style>
-        /* Общие стили */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Машины в Лизинг</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-        /* Хедер */
-        header {
-            background-color: #222;
-            color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* Хедер */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
 
-        /* Навигация */
-        nav {
-            margin-top: 15px;
-        }
+/* Навигация */
+nav {
+    margin-top: 15px;
+}
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
-        /* Основной контент */
-        section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+/* Основной контент */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        /* О компании */
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-        }
+/* О компании */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
 
-        .about img {
-            flex: 1 1 300px;
-            max-width: 500px;
-            border-radius: 10px;
-        }
+.about img {
+    flex: 1 1 300px;
+    max-width: 500px;
+    border-radius: 10px;
+}
 
-        .about-text {
-            flex: 2 1 300px;
-        }
+.about-text {
+    flex: 2 1 300px;
+}
 
-        .about-text h2 {
-            margin-top: 0;
-        }
+.about-text h2 {
+    margin-top: 0;
+}
 
-        /* Наши автомобили */
-        .cars {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
-        }
+/* Наши автомобили - контейнер для карточек */
+.cars {
+    display: flex; /* Располагаем карточки в строку */
+    flex-wrap: nowrap; /* Не переносить карточки на новую строку */
+    
+    overflow-x: auto; /* Добавляем горизонтальную прокрутку при необходимости */
+    
+    gap: 20px; /* Расстояние между карточками */
+    
+    padding-bottom: 10px; /* Отступ снизу для эстетики */
+}
 
-        .car-card {
-            background-color: #fff; 
-            border-radius: 10px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-            width: 300px; 
-            overflow: hidden; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
+/* Карточка автомобиля */
+.car-card {
+    min-width: 300px; /* Минимальная ширина карточки, чтобы не сжималась слишком сильно */
+    
+    flex-shrink: 0; /* Запретить сжатие карточки при уменьшении окна */
+    
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+   
+   /* Плавное увеличение и тень при наведении */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
 
-        .car-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+/* Эффект при наведении на карточку */
+.car-card:hover {
+   transform: scale(1.05);
+   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
-        .car-image {
-           width:100%;
-           height:auto; 
-           object-fit:none; /* чтобы изображение не обрезалось и было полностью видно */
-       }
-       
-       .car-info {
-           padding:15px; 
-       }
-       
-       .car-title {
-           font-size:.9em; 
-           margin-bottom :10px; 
-       }
-       
-       .price{
-           color:#e91e63; 
-           font-weight:bold; 
-           margin-bottom :10px; 
-       }
-       
-       .description{
-           font-size:.9em; 
-           color:#555; 
-       }
-       
-       /* Контактная секция */
-       .contact {
-           background-color:#222; 
-           color:#fff; 
-           padding :40px 20px; 
-       }
-       
-       .contact h2 {
-           text-align:center; 
-           margin-top :0; 
-       }
-       
-       .contact form {
-           max-width :600px; 
-           margin:auto; 
-           display:flex; 
-           flex-direction :column; 
-       }
-       
-       .contact input, .contact textarea {
-           padding :10px; 
-           margin-bottom :15px; 
-           border:none; 
-           border-radius :5px; 
-       }
-       
-       .contact button {
-           padding :12px; 
-           background-color:#e91e63; 
-           color:#fff; 
-           border:none; 
-           border-radius :5px; 
-           cursor:pointer; 
-       }
-       
-       .contact button:hover {
-           background-color:#c2185b; 
-       }
-       
-       /* Подвал */
-       footer {
-           background-color:#111; 
-           color:#ccc; 
-           text-align:center; 
-           padding :20px ;  
-       }
-    </style>
+/* Изображение внутри карточки */
+.car-image {
+   width:auto; 
+   max-width:100%; 
+   height:auto; 
+   object-fit:none; /* Можно изменить на cover или contain по желанию */
+}
+
+/* Информация о машине внутри карточки */
+.car-info {
+   padding:15px; 
+}
+
+.car-title {
+   font-size:.8em; 
+   margin-bottom :10px; 
+}
+   
+.price{
+   color:#e91e63; 
+   font-weight:bold; 
+   margin-bottom :10px; 
+}
+   
+.description{
+   font-size:.9em; 
+   color:#555; 
+}
+
+/* Стили для ссылок внутри карточек автомобилей (если есть) */
+.cars .car-card a {
+   text-decoration:none; 
+   color:#333; 
+}
+
+.cars .car-card a:hover {
+   text-decoration:underline; 
+}
+
+/* Контактная секция и подвал остаются без изменений */
+
+.contact {
+   background-color:#222; 
+   color:#fff; 
+   padding :40px 20px;  
+}
+   
+.contact h2 {
+   text-align:center; 
+   margin-top :0; 
+}
+   
+.contact form {
+   max-width :600px; 
+   margin:auto; 
+   display:flex; 
+   flex-direction :column; 
+}
+   
+.contact input, .contact textarea {
+   padding :10px; 
+   margin-bottom :15px; 
+   border:none; 
+   border-radius :5px; 
+}
+   
+.contact button {
+   padding :12px; 
+   background-color:#e91e63; 
+   color:#fff; 
+   border:none; 
+   border-radius :5px;  
+}
+   
+.contact button:hover {
+   background-color:#c2185b;  
+}
+
+footer {
+   background-color:#111 ;  
+   color:#ccc ;  
+   text-align:center ;  
+   padding :20px ;  
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Машины в Лизинг</h1>
-    <nav>
-      <a href="#about">О компании</a>
-      <a href="#cars">Автомобили</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+<h1>Машины в Лизинг</h1>
+<nav>
+<a href="#about">О компании</a>
+<a href="#cars">Автомобили</a>
+<a href="#contact">Контакты</a>
+</nav>
 </header>
 
 <!-- О компании -->
 <section id="about">
-    <div class="about">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Автомобиль">
-      <div class="about-text">
-          <h2>О нашей компании</h2>
-          <p>Мы предоставляем лучшие автомобили в лизинг для частных лиц и бизнеса. Наши условия гибкие и прозрачные, а команда профессионалов всегда готова помочь вам выбрать подходящий автомобиль.</p>
-      </div>
-    </div>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Автомобиль" />
+<div class="about-text">
+<h2>О нашей компании</h2>
+<p>Мы предоставляем лучшие автомобили в лизинг для частных лиц и бизнеса. Наши условия гибкие и прозрачные, а команда профессионалов всегда готова помочь вам выбрать подходящий автомобиль.</p>
+</div>
+</div>
 </section>
 
 <!-- Автомобили -->
 <section id="cars">
-    <h2 style="text-align:center;">Наши автомобили</h2>
-    <div class="cars">
-      <!-- Карточка Toyota Camry -->
-      <div class="car-card">
-          <!-- Используемое вами изображение -->
-           <img src="https://business-car.ru/upload/iblock/201/6cjy5uqdydenbclypsdtt7a9t5m2bmef.png" alt="Машина" style="max-width: 100%; height: auto;" />   
-          <div class="car-title">Toyota Camry</div>
-              <div class="price">от ₽30,000/мес.</div>
-              <div class="description">Комфортный седан с отличной динамикой и низким расходом топлива.</div>
-          </div>
-      </div>
+<h2 style="text-align:center;">Наши автомобили</h2>
+<div class="cars">
 
-      <!-- Карточка BMW X5 -->
-      <div class="car-card">
-      <img src="https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/5/96/7885c3e4a84313a6d110079a2817e965.jpg&w=3840&q=70" alt="Изображение" style="max-width: 100%; height: auto;" />   
-          <div class="car-title">BMW X5</div>
-              <div class="price">от ₽70,000/мес.</div>
-              <div class="description">Люксовый внедорожник с просторным салоном и мощным двигателем.</div>
-          </div>
-      </div>
+<!-- Карточка Toyota Camry -->
+<div class="car-card">
+<img src="https://business-car.ru/upload/iblock/201/6cjy5uqdydenbclypsdtt7a9t5m2bmef.png" alt="Toyota Camry" style="max-width:100%; height:auto;" />
+<div class="car-title">Toyota Camry</div>
+<div class="price">от ₽30,000/мес.</div>
+<div class="description">Комфортный седан с отличной динамикой и низким расходом топлива.</div>
+</div>
 
-      <!-- Карточка Audi Q8 -->
-      <div class="car-card">
-       <img src="https://apiweb.rolf.ru/storage/thumbnails/large/models/10-audi/4917-q8_new/187655c01c7e18c39e9477942940cba0.png" alt="Изображение" style="max-width: 100%; height: auto;" />    
-          <div class="car-info">
-              <div class="car-title">Audi Q8</div>
-              <div class="price">от ₽120,000/мес.</div>
-              <div class="description">Стильный кроссовер премиум-класса с передовыми технологиями и комфортом.</div>
-          </div>
-      </div>
+<!-- Карточка BMW X5 с вставленным изображением из ссылки -->
+<div class="car-card">
+<img src="https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/5/96/7885c3e4a84313a6d110079a2817e965.jpg&w=3840&q=70" alt="BMW X5" style="max-width:100%; height:auto;" />
+<div class="car-title">BMW X5</div>
+<div class="price">от ₽70,000/мес.</div>
+<div class="description">Люксовый внедорожник с просторным салоном и мощным двигателем.</div>
+</div>
 
-    </div>
+<!-- Карточка Audi Q8 -->
+<div class="car-card">
+<img src="https://apiweb.rolf.ru/storage/thumbnails/large/models/10-audi/4917-q8_new/187655c01c7e18c39e9477942940cba0.png" alt="Audi Q8" style="max-width:100%; height:auto;" />
+<div class="car-info">
+<div class="car-title">Audi Q8</div>
+<div class="price">от ₽120,000/мес.</div>
+<div class="description">Стильный кроссовер премиум-класса с передовыми технологиями и комфортом.</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- Контактная форма -->
-<section id="#contact" className='contact'>
-    <h2>Свяжитесь с нами</h2>
-    <form action="#" method='post'>
-      <input type='text' placeholder='Ваше имя' required />
-      <input type='email' placeholder='Ваш email' required />
-      <textarea rows='4' placeholder='Ваше сообщение' required></textarea>
-      <button type='submit'>Отправить</button>
-    </form>  
+<section id="contact" class="">
+<h2>Свяжитесь с нами</h2>
+<form action="#" method='post'>
+<input type='text' placeholder='Ваше имя' required />
+<input type='email' placeholder='Ваш email' required />
+<textarea rows='4' placeholder='Ваше сообщение' required></textarea>
+<button type='submit'>Отправить</button>
+</form>  
 </section>
-
-<!-- Подвал -->
-<footer>&copy; <?php echo date("Y"); ?> Машины в Лизинг. Все права защищены.</footer>
 
 </body>
 </html>
