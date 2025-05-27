@@ -1,10 +1,12 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Машины в Лизинг</title>
+<title>Автопрокат</title>
 <style>
+/* Ваш основной CSS */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -83,16 +85,16 @@ section {
     padding-bottom: 10px; /* Отступ снизу для эстетики */
 }
 
-/* Карточка автомобиля */
+/* Карточка автомобиля - сделана более узкой и фиксированной шириной */
 .car-card {
-    min-width: 300px; /* Минимальная ширина карточки, чтобы не сжималась слишком сильно */
+    width: 250px; /* Установите желаемую ширину здесь */
     
-    flex-shrink: 0; /* Запретить сжатие карточки при уменьшении окна */
+    flex-shrink: 0; /* Не сжимать при уменьшении окна */
     
-    background-color: #fff; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-   
+    background-color:#fff; 
+    border-radius:10px; 
+    box-shadow:0 2px 8px rgba(0,0,0,0.1); 
+    
    /* Плавное увеличение и тень при наведении */
    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
@@ -100,10 +102,10 @@ section {
 /* Эффект при наведении на карточку */
 .car-card:hover {
    transform: scale(1.05);
-   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+   box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Изображение внутри карточки */
+/* Изображение внутри карточки - оставляем без изменений или по желанию можно подкорректировать */
 .car-image {
    width:auto; 
    max-width:100%; 
@@ -187,74 +189,101 @@ footer {
    text-align:center ;  
    padding :20px ;  
 }
+
+/* Новые стили для карточки "АРЕНДОВАНО" */
+
+.rent-status-container {
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    width:auto;
+}
+
+.rent-label {
+    position:absolute;
+    top:-10px;
+    left:-10px;
+
+}
+
+.car-card-lease { /* Обертка для позиционирования надписи поверх карточки */
+	position:absolute;
+	top:-10px;
+	left:-10px;
+
+	width:auto;
+
+	display:flex ;
+	flex-direction:center ;
+	justify-content:center ;
+	align-items:center ;
+	z-index :9999 ;
+	width:auto ;
+	height:auto ;
+	padding-left :20 px ;
+	padding-right :20 px ;
+	background:none ;
+} 
+
+/* Стиль для текста "АРЕНДОВАНО" поверх карточки */
+
+.rented-label {
+	position:absolute;
+/* Можно задать фиксированные координаты или оставить как есть для центрирования*/
+	top:-10 px;
+/* left:-10 px;*/
+	left :50% ;
+	transform : translateX(-50%) ;
+	font-size:.9em ;
+	color:red ;
+	font-weight:bold ;
+	z-index :9999 ;
+
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>Машины в Лизинг</h1>
-<nav>
-<a href="#about">О компании</a>
-<a href="#cars">Автомобили</a>
-<a href="#contact">Контакты</a>
-</nav>
+<h1>Автопрокат</h1>
 </header>
 
-<!-- О компании -->
-<section id="about">
-<div class="about">
-<img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Автомобиль" />
-<div class="about-text">
-<h2>О нашей компании</h2>
-<p>Мы предоставляем лучшие автомобили в лизинг для частных лиц и бизнеса. Наши условия гибкие и прозрачные, а команда профессионалов всегда готова помочь вам выбрать подходящий автомобиль.</p>
-</div>
-</div>
-</section>
+<nav>
+<a href="#">Главная</a>
+<a href="#">Автомобили</a>
+<a href="#">Контакты</a>
+</nav>
 
-<!-- Автомобили -->
-<section id="cars">
-<h2 style="text-align:center;">Наши автомобили</h2>
+<section>
+<h2>Наши автомобили</h2>
+
+<!-- Контейнер для карточек -->
 <div class="cars">
 
-<!-- Карточка Toyota Camry -->
+<!-- Пример одной карточки с "АРЕНДОВАНО" -->
 <div class="car-card">
-<img src="https://business-car.ru/upload/iblock/201/6cjy5uqdydenbclypsdtt7a9t5m2bmef.png" alt="Toyota Camry" style="max-width:100%; height:auto;" />
-<div class="car-title">Toyota Camry</div>
-<div class="price">от ₽30,000/мес.</div>
-<div class="description">Комфортный седан с отличной динамикой и низким расходом топлива.</div>
+  
+  <!-- Надпись "АРЕНДОВАНО" -->
+  <div class="rented-label">АРЕНДОВАНО</div>
+  
+  <!-- Основной контент карточки -->
+  <div style="display:flex;height:auto;width:auto;text-align:center;">
+      <div style="margin:auto;font-size:.9em;color:red;">БМВ Х5</div>
+ </div> 
+  
 </div>
 
-<!-- Карточка BMW X5 с вставленным изображением из ссылки -->
-<div class="car-card">
-<img src="https://alfaleasing.ru/catalog-next/_next/image/?url=https://io.ilsa.ru/gallery/catalog/5/96/7885c3e4a84313a6d110079a2817e965.jpg&w=3840&q=70" alt="BMW X5" style="max-width:100%; height:auto;" />
-<div class="car-title">BMW X5</div>
-<div class="price">от ₽70,000/мес.</div>
-<div class="description">Люксовый внедорожник с просторным салоном и мощным двигателем.</div>
-</div>
-
-<!-- Карточка Audi Q8 -->
-<div class="car-card">
-<img src="https://apiweb.rolf.ru/storage/thumbnails/large/models/10-audi/4917-q8_new/187655c01c7e18c39e9477942940cba0.png" alt="Audi Q8" style="max-width:100%; height:auto;" />
-<div class="car-info">
-<div class="car-title">Audi Q8</div>
-<div class="price">от ₽120,000/мес.</div>
-<div class="description">Стильный кроссовер премиум-класса с передовыми технологиями и комфортом.</div>
-</div>
-</div>
+<!-- Можно добавить еще такие же или другие карточки -->
 
 </div>
+
 </section>
 
-<!-- Контактная форма -->
-<section id="contact" class="">
-<h2>Свяжитесь с нами</h2>
-<form action="#" method='post'>
-<input type='text' placeholder='Ваше имя' required />
-<input type='email' placeholder='Ваш email' required />
-<textarea rows='4' placeholder='Ваше сообщение' required></textarea>
-<button type='submit'>Отправить</button>
-</form>  
-</section>
+<!-- Остальной контент (например, о компании) можно оставить по вашему желанию -->
+
+<footer>
+<p>&copy; Все права защищены.</p>
+</footer>
 
 </body>
 </html>
