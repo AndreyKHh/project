@@ -76,15 +76,15 @@ section {
     padding-bottom: 10px; /* Отступ снизу для эстетики */
 }
 
-/* Карточка автомобиля */
+/* Карточка автомобиля - сделана более узкой и фиксированной шириной */
 .car-card {
-    min-width: 300px; /* Минимальная ширина карточки, чтобы не сжималась слишком сильно */
+    width: 250px; /* Установите желаемую ширину здесь */
     
-    flex-shrink: 0; /* Запретить сжатие карточки при уменьшении окна */
+    flex-shrink: 0; /* Не сжимать при уменьшении окна */
     
-    background-color: #fff; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    background-color:#fff; 
+    border-radius:10px; 
+    box-shadow:0 2px 8px rgba(0,0,0,0.1); 
    
    /* Плавное увеличение и тень при наведении */
    transition: transform 0.3s ease, box-shadow 0.3s ease; 
@@ -93,10 +93,10 @@ section {
 /* Эффект при наведении на карточку */
 .car-card:hover {
    transform: scale(1.05);
-   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+   box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Изображение внутри карточки */
+/* Изображение внутри карточки - оставляем без изменений или по желанию можно подкорректировать */
 .car-image {
    width:auto; 
    max-width:100%; 
