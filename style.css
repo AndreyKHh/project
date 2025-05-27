@@ -2,181 +2,122 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
 }
 
-/* Хедер */
+/* Шапка сайта */
 header {
-    background-color: #222;
+    background-color: #333;
     color: #fff;
-    padding: 30px 20px;
-    text-align: center;
+    padding: 20px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
 }
 
-/* Навигация */
-nav {
-    margin-top: 15px;
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
-nav a {
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
 }
 
-nav a:hover {
+nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Основной контент */
-section {
+/* Разделы сайта */
+.section {
     padding: 40px 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* О компании */
-.about {
+/* Заголовки разделов */
+.section h2 {
+    margin-bottom: 20px;
+}
+
+/* Список автомобилей */
+.car-list {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     gap: 20px;
 }
 
-.about img {
-    flex: 1 1 300px;
-    max-width: 500px;
-    border-radius: 10px;
+.car-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    padding: 10px;
 }
 
-.about-text {
-    flex: 2 1 300px;
+.car-item img {
+    width: 100%;
+    border-radius: 4px;
 }
 
-.about-text h2 {
-    margin-top: 0;
+@media(max-width:768px) {
+   .car-item {
+       flex:1 1 calc(50% -40px);
+       max-width: calc(50% -40px);
+   }
 }
 
-/* Наши автомобили - контейнер для карточек */
-.cars {
-    display: flex; /* Располагаем карточки в строку */
-    flex-wrap: nowrap; /* Не переносить карточки на новую строку */
-    
-    overflow-x: auto; /* Добавляем горизонтальную прокрутку при необходимости */
-    
-    gap: 20px; /* Расстояние между карточками */
-    
-    padding-bottom: 10px; /* Отступ снизу для эстетики */
+@media(max-width:480px) {
+   .car-item {
+       flex:1 1 calc(100% -40px);
+       max-width: calc(100% -40px);
+   }
 }
 
-/* Карточка автомобиля - сделана более узкой и фиксированной шириной */
-.car-card {
-    width: 250px; /* Установите желаемую ширину здесь */
-    
-    flex-shrink: 0; /* Не сжимать при уменьшении окна */
-    
-    background-color:#fff; 
-    border-radius:10px; 
-    box-shadow:0 2px 8px rgba(0,0,0,0.1); 
+/* Форма заявки */
+form {
+   background-color:#fff;
+   padding:20px;
+   border-radius:8px;
+   box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+input[type=text],
+input[type=tel],
+select {
+   width:auto;
+   padding:10px;
+   margin-top:-10px; /* чтобы убрать лишний отступ */
+   width:auto !important; /* исправление для ширины */
+   width:auto; /* чтобы было более универсально */
+   width:auto; /* оставить как есть для простоты */
+   width:auto; /* можно задать фиксированную ширину, например,100% или конкретное значение */
+   width:auto; /* исправление для ширины */
    
-   /* Плавное увеличение и тень при наведении */
-   transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
-
-/* Эффект при наведении на карточку */
-.car-card:hover {
-   transform: scale(1.05);
-   box-shadow:0 4px 12px rgba(0,0,0,0.2);
+input[type=text],
+input[type=tel],
+select {
+   width :100%;
 }
-
-/* Изображение внутри карточки - оставляем без изменений или по желанию можно подкорректировать */
-.car-image {
-   width:auto; 
-   max-width:100%; 
-   height:auto; 
-   object-fit:none; /* Можно изменить на cover или contain по желанию */
+button[type=submit] {
+   background-color:#333;
+   color:#fff;
+   border:none;
+   padding :12px 24px ;
+   border-radius :4 px ;
+   cursor:pointer ;
 }
-
-/* Информация о машине внутри карточки */
-.car-info {
-   padding:15px; 
-}
-
-.car-title {
-   font-size:.8em; 
-   margin-bottom :10px; 
-}
-   
-.price{
-   color:#e91e63; 
-   font-weight:bold; 
-   margin-bottom :10px; 
-}
-   
-.description{
-   font-size:.9em; 
-   color:#555; 
-}
-
-/* Стили для ссылок внутри карточек автомобилей (если есть) */
-.cars .car-card a {
-   text-decoration:none; 
-   color:#333; 
-}
-
-.cars .car-card a:hover {
-   text-decoration:underline; 
-}
-
-/* Контактная секция и подвал остаются без изменений */
-
-.contact {
-   background-color:#222; 
-   color:#fff; 
-   padding :40px 20px;  
-}
-   
-.contact h2 {
-   text-align:center; 
-   margin-top :0; 
-}
-   
-.contact form {
-   max-width :600px; 
-   margin:auto; 
-   display:flex; 
-   flex-direction :column; 
-}
-   
-.contact input, .contact textarea {
-   padding :10px; 
-   margin-bottom :15px; 
-   border:none; 
-   border-radius :5px; 
-}
-   
-.contact button {
-   padding :12px; 
-   background-color:#e91e63; 
-   color:#fff; 
-   border:none; 
-   border-radius :5px;  
-}
-   
-.contact button:hover {
-   background-color:#c2185b;  
-}
-
-footer {
-   background-color:#111 ;  
-   color:#ccc ;  
-   text-align:center ;  
-   padding :20px ;  
+button[type=submit]:hover{
+background-color:#555 ;
 }
