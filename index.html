@@ -1,225 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Автопрокат</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Хедер */
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 30px 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-/* Навигация */
-nav {
-    margin-top: 15px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Основной контент */
-section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* О компании */
-.about {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-
-.about img {
-    flex: 1 1 300px;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-.about-text {
-    flex: 2 1 300px;
-}
-
-.about-text h2 {
-    margin-top: 0;
-}
-
-/* Наши автомобили - контейнер для карточек */
-.cars {
-   display:flex; /* Располагаем карточки в строку */
-   flex-wrap:no-wrap; /* Не переносить карточки на новую строку */
-   overflow-x:auto; /* Добавляем горизонтальную прокрутку при необходимости */
-   gap:20px; /* Расстояние между карточками */
-   padding-bottom :10px; /* Отступ снизу для эстетики */
-}
-
-/* Карточка автомобиля - сделана более узкой и фиксированной шириной */
-.car-card {
-   width :250px; /* Установите желаемую ширину здесь */
-   flex-shrink :0; /* Не сжимать при уменьшении окна */
-   background-color:#fff; 
-   border-radius :10px; 
-   box-shadow :0 2px 8px rgba(0,0,0,0.1); 
-   transition :transform .3s ease , box-shadow .3s ease ; 
-}
-.car-card:hover{
-   transform :scale(1.05);
-   box-shadow :0 4px 12px rgba(0,0,0,0.2);
-}
-.car-image{
-   width:auto; 
-   max-width :100%; 
-   height:auto; 
-}
-.car-info{
-   padding :15px; 
-}
-.car-title{
-   font-size:.8em; 
-   margin-bottom :10px; 
-}
-.price{
-   color:#e91e63; 
-   font-weight:bold; 
-   margin-bottom :10px; 
-}
-.description{
-   font-size:.9em; 
-   color:#555; 
-}
-/* Стили для ссылок внутри карточек автомобилей (если есть) */
-.cars .car-card a{
-   text-decoration:none; 
-   color:#333; 
-}
-.cars .car-card a:hover{
-   text-decoration:underline; 
-}
-/* Контактная секция и подвал остаются без изменений */
-
-.contact{
-   background-color:#222 ;  
-   color:#fff ;  
-   padding :40px 20px ;  
-}
-.contact h2{
-   text-align:center ;  
-   margin-top :0 ;  
-}
-.contact form{
-   
-max-width :600px ;  
-margin:auto ;  
-display:flex ;  
-flex-direction :column ;  
-}
-.contact input,.contact textarea{
-   
-padding :10px ;  
-margin-bottom :15px ;  
-border:none ;  
-border-radius :5px ;  
-}
-.contact button{
-   
-padding :12px ;  
-background-color:#e91e63 ;  
-color:#fff ;  
-border:none ;  
-border-radius :5px ;  
-}
-.contact button:hover{
-   
-background-color:#c2185b ;  
-}
-
-footer{
-   
-background-color:#111 ;  
-color:#ccc ;  
-text-align:center ;  
-padding :20px ;
-}
-/* Восстановление стилей для карточки "АРЕНДОВАНО" */
-
-.rented-label {
-	position:absolute;
-/* Можно задать фиксированные координаты или оставить как есть для центрирования*/
-	top:-10 px;
-/* left:-10 px;*/
-	left :50% ;
-	transform : translateX(-50%) ;
-	font-size:.9em ;
-	color:red ;
-	font-weight:bold ;
-	z-index :9999 ;
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лизинг автомобилей</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <header>
+        <h1>Лизинг автомобилей</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#cars">Автомобили</a></li>
+                <li><a href="#application">Заявка</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-<h1>Автопрокат</h1>
-</header>
+    <section id="about" class="section">
+        <h2>О нашей компании</h2>
+        <p>Мы предлагаем выгодные условия лизинга автомобилей для частных лиц и бизнеса. Выберите подходящий автомобиль и оформите заявку прямо на сайте.</p>
+    </section>
 
-<nav>
-<a href="#">Главная</a>
-<a href="#">Автомобили</a>
-<a href="#">Контакты</a>
-</nav>
+    <section id="cars" class="section">
+        <h2>Наши автомобили</h2>
+        <div class="car-list">
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+1" alt="Автомобиль 1" />
+                <h3>Легковой автомобиль A</h3>
+                <p>Цена: 1 000 000 ₽</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+2" alt="Автомобиль 2" />
+                <h3>Кроссовер B</h3>
+                <p>Цена: 1 500 000 ₽</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Авто+3" alt="Автомобиль 3" />
+                <h3>Грузовик C</h3>
+                <p>Цена: 2 000 000 ₽</p>
+            </div>
+        </div>
+    </section>
 
-<section>
-<h2>Наши автомобили</h2>
+    <section id="application" class="section">
+        <h2>Оформить заявку на лизинг</h2>
+        <form id="leaseForm">
+            <label for="name">Имя:</label><br/>
+            <input type="text" id="name" name="name" required /><br/><br/>
 
-<!-- Контейнер для карточек -->
-<div class="cars">
+            <label for="phone">Телефон:</label><br/>
+            <input type="tel" id="phone" name="phone" required /><br/><br/>
 
-<!-- Одна примерная карточка с "АРЕНДОВАНО" -->
-<div class="car-card" style="position:absolute;">
-<div class="rented-label">АРЕНДОВАНО</div>
-<div style="display:flex;height:auto;width:auto;text-align:center;">
-      <div style="margin:auto;font-size:.9em;color:red;">БМВ Х5</div>
- </div> 
-  
-</div>
+            <label for="car">Выберите автомобиль:</label><br/>
+            <select id="car" name="car" required>
+                <option value="">--Выберите--</option>
+                <option value="Легковой автомобиль A">Легковой автомобиль A</option>
+                <option value="Кроссовер B">Кроссовер B</option>
+                <option value="Грузовик C">Грузовик C</option>
+            </select><br/><br/>
 
-<!-- Можно добавить еще такие же или другие карточки -->
+            <button type="submit">Отправить заявку</button>
+        </form>
 
-</div>
+        <!-- Сообщение об успешной отправке -->
+        <div id="formMessage" style="margin-top:20px; color:green; display:none;">
+            Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+        </div>
+    </section>
 
-</section>
+    <footer style="background:#222; color:#fff; padding:20px; text-align:center;">
+        &copy; 2024 Лизинг автомобилей. Все права защищены.
+    </footer>
 
-<!-- Остальной контент (например, о компании) можно оставить по вашему желанию -->
+    <!-- Скрипт для обработки формы -->
+    <script>
+        document.getElementById('leaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-<footer>
-<p>&copy; Все права защищены.</p>
-</footer>
+            // Можно добавить обработку данных или отправку на сервер
+            // Для примера просто показываем сообщение
+            document.getElementById('formMessage').style.display = 'block';
 
+            // Очистка формы
+            this.reset();
+        });
+    </script>
 </body>
 </html>
